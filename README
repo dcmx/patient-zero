@@ -2,7 +2,7 @@
 Patient Zero Simulation
 
 
-This archive contains all necessary files to reproduce the figures from our submission "Inference of a Rumor's Source in the Independent Cascade Model". It uses the GNU parallel tool to speed up the simulation by parallelizing suitable tasks, see https://www.gnu.org/software/parallel/.
+This archive contains all necessary files to reproduce the figures from our manuscript "Inference of a Rumor's Source in the Independent Cascade Model" (see https://arxiv.org/abs/2205.12125). It uses the GNU parallel tool to speed up the simulation by parallelizing suitable tasks.
 
 To generate the figures, use the "make-plots" script:
 
