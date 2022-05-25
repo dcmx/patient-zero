@@ -1,0 +1,32 @@
+#!/bin/bash
+set -x
+g++ -O3 -o patient-zero src/main.cpp
+g++ -O3 -o ERgenerator src/graph-generators/ERgenerator.cpp
+g++ -O3 -o CMgenerator src/graph-generators/CMgenerator.cpp
+g++ -O3 -o RGGgenerator src/graph-generators/RGGgenerator.cpp
+
+./ERgenerator 100000 0.004 > 100k4dER 
+./CMgenerator 100000 4 > 100k4dCM 
+./RGGgenerator 100000 16 > 100k16dRGG
+
+./run-all 8 100k4dER | parallel
+./run-all 8 100k4dCM | parallel
+./run-all 8 100k16dRGG | parallel
+./run-all 16 100k16dRGG | parallel
+./run-all 32 100k16dRGG | parallel
+
+./rake out-8-100k4dER > data-8-100k4dER
+./rake out-8-100k4dCM > data-8-100k4dCM
+./rake out-8-100k16dRGG > data-8-100k16dRGG
+./rake out-16-100k16dRGG > data-16-100k16dRGG
+./rake out-32-100k16dRGG > data-32-100k16dRGG
+
+./rake2 out-8-100k4dER
+
+./plot
+
+pdflatex simple.tex
+pdflatex simple.tex
+
+xdg-open simple.pdf
+

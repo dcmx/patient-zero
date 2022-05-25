@@ -1,0 +1,29 @@
+#!/bin/bash
+#usage: ./run-all.sh t NETWORK
+
+mkdir out-$1-$2
+
+for i in $(seq 1 100)
+	do
+	echo "./run $1 $2 0.00 $i"
+	echo "./run $1 $2 0.05 $i"
+	echo "./run $1 $2 0.10 $i"
+	echo "./run $1 $2 0.15 $i"
+	echo "./run $1 $2 0.20 $i"
+	echo "./run $1 $2 0.25 $i"
+	echo "./run $1 $2 0.30 $i"
+	echo "./run $1 $2 0.35 $i"
+	echo "./run $1 $2 0.40 $i"
+	echo "./run $1 $2 0.45 $i"
+	echo "./run $1 $2 0.50 $i"
+	echo "./run $1 $2 0.55 $i"
+	echo "./run $1 $2 0.60 $i"
+	echo "./run $1 $2 0.65 $i"
+	echo "./run $1 $2 0.70 $i"
+	echo "./run $1 $2 0.75 $i"
+	echo "./run $1 $2 0.80 $i"
+	echo "./run $1 $2 0.85 $i"
+	echo "./run $1 $2 0.90 $i"
+	echo "./run $1 $2 0.95 $i"
+	echo "./run $1 $2 1.00 $i"
+done

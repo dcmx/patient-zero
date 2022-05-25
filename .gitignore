@@ -1,0 +1,15 @@
+.*.swp
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+simple.pdf
+patient-zero
+ERgenerator
+CMgenerator
+RGGgenerator
+100k4dER
+100k4dCM
+100k16dRGG
+data-*
+out-*
